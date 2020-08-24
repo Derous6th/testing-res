@@ -1,0 +1,22 @@
+.pro {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    height: 300px;
+    text-align: center;
+}
+.pro .title {
+    font-size: 15px;
+}
+.pro .price {
+    font-size: 13px;
+    font-style: bold;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}

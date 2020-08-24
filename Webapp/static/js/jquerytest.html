@@ -1,0 +1,21 @@
+<form name="frm">
+    <input type="number" name="id">
+    <select name="pro">
+        <option value="1">HN</option>
+        <option value="2">SG</option>
+        <option value="3">DN</option>
+    </select>
+    <button type="button" id="btn">SAVE HERE</button>
+</form>
+<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+/*$('#btn').click(function(){
+   alert(this);
+});*/
+$(btn).click(function(){ /* id dung # hoac ko #, class dung . */
+    /*alert(this)*/
+    var a = $(frm['id']).val();
+    /*alert(a);*/
+    $(frm['pro']).val(a)
+})
+</script>

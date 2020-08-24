@@ -1,0 +1,27 @@
+<a href="/dataraw/import">IMPORT DATA</a>
+<p>Quantity: {{c}}</p>
+<ul>
+    {% for i in range(1,n+1)  %}
+        <li><a href="/dataraw/{{i}}">{{i}}</a></li>
+    {% endfor %}
+</ul>
+<table>
+    <tr>
+        <th>ROW ID</th>
+        <th>ORDER ID</th>
+        <th>ORDER DATE</th>
+        <th>SHIP MODE</th>
+        <th>CUSTOMDER ID</th>
+        <th>CUSTOMER NAME</th>
+    </tr>
+    {% for i in  arr %}
+    <tr>
+        <td>{{i[0]}}</td>
+        <td>{{i[1]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+        <td>{{i[4]}}</td>
+        <td>{{i[5]}}</td>
+    </tr> 
+    {% endfor %}
+</table>

@@ -1,0 +1,50 @@
+<a href='product/add'> ADD PRODUCT </a>
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Quantiy</th>
+    </tr>
+    {% for i in arr %}
+    <tr>
+        <td>{{i[1]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+        <td><img src="static/photos/{{i[4]}}" width="60"></td>
+        <td>{{i[5]}}</td>
+        <td>{{i[6]}}</td>
+        <td>
+            <a href="product/edit/{{i[0]}}">Edit</a>
+        </td>
+        <td>
+            <a href="product/edit2/{{i[0]}}">Edit2</a>
+        </td>
+        <td>
+            <a class="del" val="{{i[0]}}" href="product/delete/{{i[0]}}">Delete</a>
+        </td>
+    </tr>  
+    {% endfor %}
+</table>
+<script type="text/javascript" src="/static/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+    //$('.del').click(function(){
+        //p = $(this).parent('tr');// -> //chi dinh parent tuy y
+        //if(confirm('Are you sure you want to delete this?'))
+        //    p = $(this).closest('tr'); //gan nhat
+        //    $(p).remove(); 
+        // KO XOA TREN DATABASE
+    $('.del').click(function(ev){
+        ev.preventDefault()  //chan ko cho chuyen trang
+        if(confirm('Are you sure you want to delete this?'))
+            var id = $(this).attr('val');
+            var that = this;
+            $.get('/product/delete/' + id, function(rs){
+                if(rs == '1'){
+                    $(that).closest('tr').remove();
+                }
+            })
+});
+</script>

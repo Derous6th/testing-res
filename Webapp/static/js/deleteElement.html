@@ -1,0 +1,33 @@
+<table id="tb">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>DELETE</th>
+    </tr>
+    <tr>
+        <th>1</th>
+        <th>ASUCK</th>
+        <th class="del">DELETE</th>
+    </tr>
+    <tr>
+        <th>2</th>
+        <th>DELL OCCHO</th>
+        <th class="del">DELETE</th>
+    </tr>
+    <tr>
+        <th>3</th>
+        <th>MSI</th>
+        <th class="del">DELETE</th>
+    </tr>
+    
+</table>
+
+<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$('.del').click(function(){
+    //p = $(this).parent('tr');// -> //chi dinh parent tuy y
+    if(confirm('Are you sure you want to delete this?'))
+        p = $(this).closest('tr'); //gan nhat
+        $(p).remove();
+})
+</script>

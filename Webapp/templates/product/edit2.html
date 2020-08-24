@@ -1,0 +1,42 @@
+<form method="POST" action="/product/edit/{{u[0]}}" enctype="multipart/form-data" name="frm">
+    <div>
+        <label>CATEGORY</label>
+        <select name="cat">
+            {% for i in arr %}
+                <option value="{{i[0]}}"> {{i[1]}} </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" value="{{u[2]}}">
+    </div>
+    <div>
+        <label>Price</label>
+        <input type="number" name="pri" value="{{u[3]}}">
+    </div>
+    <div>
+        <label>Quantity</label>
+        <input type="number" name="qty" value="{{u[6]}}">
+    </div> 
+    <div>
+        <label>Image</label>
+        <input type="hidden" name="img" value="{{u[4]}}">
+        <img src="/static/photos/{{u[4]}}" width = 60>
+        <input type="file" name="f">
+        
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea name="des" value="{{u[5]}}"></textarea>
+    </div>
+    <div>
+        <button>Save</button>
+    </div>
+</form>
+<script type="text/javascript" src="/static/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(frm['cat']).val({{u[1]}});
+</script>
+
+

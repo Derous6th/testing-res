@@ -1,0 +1,26 @@
+<form method="POST" action="/category/delall">
+    <table>
+        <tr>
+            <button> DELETE </button>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+        {% for i in arr %}
+        <tr>
+            <td>
+                <input type="checkbox" name="a" value="{{i[0]}}">
+            </td>
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td>
+                <a href="/category/delete/{{i[0]}}">
+                    <img src="/static/images/del.png" >
+                </a>
+                <a href="/category/edit/{{i[0]}}">
+                    <img src="/static/images/edit.png" >
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>

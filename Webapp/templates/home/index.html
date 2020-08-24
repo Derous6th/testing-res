@@ -1,0 +1,42 @@
+{% extends "shared/bikeStore.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-3">
+        <h2>BRANDS</h2>
+        <ul>
+            {% for v in brr %}
+                <li>
+                    <a href="/home/brand/{{v[0]}}">{{v[1]}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>CATEGORIES</h2>
+        <ul>
+            {% for v in crr %}
+                <li>
+                    <a href="/home/cat/{{v[0]}}">{{v[1]}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-9">
+        <div class="row">
+            {% for v in arr  %}
+                <div class="col-4">
+                    <div class="pro">
+                        <h3 class="title">
+                            <a href="/home/detail/{{v[0]}}">{{v[1]}}</a>
+                        </h3>
+                        <img class="img-fluid" src="/images/{{v[-1]}}">
+                        <div class="price">Price: {{v[5]}}$</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+    
+{% endblock content %}
+
+
+
